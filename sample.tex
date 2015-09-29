@@ -1,0 +1,106 @@
+\documentclass[fontsize=24pt]{scrartcl}
+
+%% Recommended to use larger font sizes
+%% otherwise, use \Large, \huge liberally :-)
+
+%% Adjust to taste
+\usepackage[margin=0.75in,a4paper,includefoot,bottom=0.3in,footskip=2em]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[lining,tabular]{fbb} 
+\usepackage[scaled=.95,type1]{cabin} 
+\usepackage[varqu,varl]{zi4}
+\usepackage[libertine,bigdelims]{newtxmath}
+
+\usepackage[showmarks]{pocketmod}
+
+\usepackage{graphicx}
+\usepackage{enumitem}
+\setlist{leftmargin=\parindent,labelindent=*}
+\usepackage{hyperref}
+\usepackage[hyphenbreaks]{breakurl}
+
+\title{Creating PocketMods with \LaTeX}
+\author{LianTze Lim}
+\date{\texttt{liantze@gmail.com}}
+
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\maketitle
+\setcounter{page}{0}
+\thispagestyle{empty}
+\clearpage
+
+\section{How to Use}
+
+\begin{itemize}
+\item Just add \verb|\usepackage{pocketmod}|
+\item Rearranges 8 pages on a sheet of paper, folded into a booklet
+\item Uses only a single side -- ideal for recycling used paper!
+\end{itemize}
+
+{\centering
+\includegraphics[width=\textwidth]{IMG_2815}
+\par
+}
+
+\clearpage
+
+\section{How to Cut and Fold}
+
+\begin{itemize}
+\item \url{http://www.pocketmod.com}
+\item \url{http://www.youtube.com/watch?v=IAb31rIeGZo}
+\item \verb|\usepackage[showmarks]{pocketmod}| for guiding fold marks
+\end{itemize}
+
+\clearpage
+{\centering
+\includegraphics[width=.5\textwidth]{IMG_2817}%
+\includegraphics[width=.5\textwidth]{IMG_2816}\\
+\includegraphics[width=.5\textwidth]{IMG_2821}%
+\includegraphics[width=.5\textwidth]{IMG_2818}%
+\par
+}
+
+\clearpage
+
+\section{Some Tips}
+
+\begin{itemize}
+\item Try to keep your contents to 8 pages or less \texttt{;-)}
+\item Use large fonts! They'll be scaled to $\frac{1}{8}$ the size.
+  \begin{itemize}
+  \item \texttt{extsizes} package
+  \item KOMA-script classes allow arbitrary body font size
+  \item Liberal uses of \verb|\Large|, \verb|\huge| etc
+  \end{itemize}
+\end{itemize}
+
+\clearpage
+
+\section{Some Ideas}
+
+\begin{itemize}
+\item Daily planners
+\item Note pads, doodle sketchpads
+\item Conference/event itinerary handouts
+\item Prayer book/personal book of inspirational quotes
+\item Little books for little hands
+\end{itemize}
+
+{\centering
+\includegraphics[width=.5\textwidth]{IMG_2822}%
+\par
+}
+
+\clearpage
+
+\vspace*{\stretch{1}}
+{\centering\Huge\itshape\bfseries Have fun!\par}
+\vspace*{\stretch{1}}
+
+\end{document}

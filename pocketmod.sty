@@ -1,0 +1,52 @@
+%% Quick hack by LianTze Lim (liantze@gmail.com)
+\ProvidesPackage{pocketmod}[2015/02/13 package pocketmod.sty]
+
+\newif\if@showmarks\@showmarksfalse
+\DeclareOption{showmarks}{
+  \@showmarkstrue
+}
+\ProcessOptions
+
+\RequirePackage{pgfpages}
+\pgfpagesuselayout{8 on 1}[a4paper,landscape]
+\pgfpageslogicalpageoptions{1}{
+  center=\pgfpoint{.125\pgfphysicalwidth}{.25\pgfphysicalheight},%
+	rotation=180%
+}
+\pgfpageslogicalpageoptions{2}{
+  center=\pgfpoint{.125\pgfphysicalwidth}{.75\pgfphysicalheight}%
+}
+\pgfpageslogicalpageoptions{3}{
+  center=\pgfpoint{.375\pgfphysicalwidth}{.75\pgfphysicalheight}%
+}
+\pgfpageslogicalpageoptions{4}{
+  center=\pgfpoint{.625\pgfphysicalwidth}{.75\pgfphysicalheight}%
+}
+\pgfpageslogicalpageoptions{5}{
+  center=\pgfpoint{.875\pgfphysicalwidth}{.75\pgfphysicalheight}%
+}
+\pgfpageslogicalpageoptions{6}{
+  center=\pgfpoint{.875\pgfphysicalwidth}{.25\pgfphysicalheight},%
+  rotation=180
+}
+\pgfpageslogicalpageoptions{7}{
+  % no change in centre!
+  rotation=180
+}
+\pgfpageslogicalpageoptions{8}{
+  center=\pgfpoint{.375\pgfphysicalwidth}{.25\pgfphysicalheight},%
+  rotation=180
+}
+
+\if@showmarks
+  \RequirePackage{pgf}
+  \pgfpageslogicalpageoptions{1}{border code=\pgfsetlinewidth{0.4pt}\pgfsetstrokecolor{gray!40}\pgfsetdash{{0.2in}{0.2in}}{0pt}\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{2}{border code=\pgfsetlinewidth{0.4pt}\pgfsetstrokecolor{gray!40}\pgfsetdash{{0.2in}{0.2in}}{0pt}\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{3}{border code=\pgfsetlinewidth{0.4pt}\pgfsetstrokecolor{gray!40}\pgfsetdash{{0.2in}{0.2in}}{0pt}\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{4}{border code=\pgfsetlinewidth{0.4pt}\pgfsetstrokecolor{gray!40}\pgfsetdash{{0.2in}{0.2in}}{0pt}\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{5}{border code=\pgfsetlinewidth{0.4pt}\pgfsetstrokecolor{gray!40}\pgfsetdash{{0.2in}{0.2in}}{0pt}\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{6}{border code=\pgfsetlinewidth{0.4pt}\pgfsetstrokecolor{gray!40}\pgfsetdash{{0.2in}{0.2in}}{0pt}\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{7}{border code=\pgfsetlinewidth{0.4pt}\pgfsetstrokecolor{gray!40}\pgfsetdash{{0.2in}{0.2in}}{0pt}\pgfusepath{stroke}}
+  \pgfpageslogicalpageoptions{8}{border code=\pgfsetlinewidth{0.4pt}\pgfsetstrokecolor{gray!40}\pgfsetdash{{0.2in}{0.2in}}{0pt}\pgfusepath{stroke}}
+
+\fi
