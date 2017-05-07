@@ -1,5 +1,5 @@
 %% Quick hack by LianTze Lim (liantze@gmail.com)
-\ProvidesPackage{pocketmod}[2017/04/12 package pocketmod.sty by LianTze Lim (liantze@gmail.com)]
+\ProvidesPackage{pocketmod}[2017/05/07 package pocketmod.sty by LianTze Lim (liantze@gmail.com)]
 
 \newif\if@showmarks\@showmarksfalse
 \DeclareOption{showmarks}{
@@ -8,35 +8,40 @@
 \ProcessOptions
 
 \RequirePackage{pgfpages}
-\pgfpagesuselayout{8 on 1}[a4paper,landscape]
+\pgfpagesuselayout{8 on 1}
+\newlength{\@adjlength}
+\pgfmathsetmacro{\@myratio}{0.25*\paperheight/\paperwidth}
+\pgfmathsetlength{\@adjlength}{(\@myratio * \paperheight)/2}
+
 \pgfpageslogicalpageoptions{1}{
-  center=\pgfpoint{.125\pgfphysicalwidth}{.25\pgfphysicalheight},%
+  center=\pgfpoint{.125\pgfphysicalwidth}{.5\pgfphysicalheight - \@adjlength},%
 	rotation=180%
 }
 \pgfpageslogicalpageoptions{2}{
-  center=\pgfpoint{.125\pgfphysicalwidth}{.75\pgfphysicalheight}%
+  center=\pgfpoint{.125\pgfphysicalwidth}{.5\pgfphysicalheight + \@adjlength}%
 }
 \pgfpageslogicalpageoptions{3}{
-  center=\pgfpoint{.375\pgfphysicalwidth}{.75\pgfphysicalheight}%
+  center=\pgfpoint{.375\pgfphysicalwidth}{.5\pgfphysicalheight + \@adjlength}%
 }
 \pgfpageslogicalpageoptions{4}{
-  center=\pgfpoint{.625\pgfphysicalwidth}{.75\pgfphysicalheight}%
+  center=\pgfpoint{.625\pgfphysicalwidth}{.5\pgfphysicalheight + \@adjlength}%
 }
 \pgfpageslogicalpageoptions{5}{
-  center=\pgfpoint{.875\pgfphysicalwidth}{.75\pgfphysicalheight}%
+  center=\pgfpoint{.875\pgfphysicalwidth}{.5\pgfphysicalheight + \@adjlength}%
 }
 \pgfpageslogicalpageoptions{6}{
-  center=\pgfpoint{.875\pgfphysicalwidth}{.25\pgfphysicalheight},%
+  center=\pgfpoint{.875\pgfphysicalwidth}{.5\pgfphysicalheight - \@adjlength},%
   rotation=180
 }
 \pgfpageslogicalpageoptions{7}{
-  % no change in centre!
+  center=\pgfpoint{.625\pgfphysicalwidth}{.5\pgfphysicalheight - \@adjlength},
   rotation=180
 }
 \pgfpageslogicalpageoptions{8}{
-  center=\pgfpoint{.375\pgfphysicalwidth}{.25\pgfphysicalheight},%
+  center=\pgfpoint{.375\pgfphysicalwidth}{.5\pgfphysicalheight - \@adjlength},%
   rotation=180
 }
+
 
 \if@showmarks
   \RequirePackage{pgf}
