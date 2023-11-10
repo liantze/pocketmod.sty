@@ -9,10 +9,7 @@
 
 \RequirePackage{ifxetex}
 \ifxetex
-\def\pgfsysdriver{pgfsys-dvipdfmx.def}
-\def\pgfsys@papersize#1#2{%
-  \pdfpageheight#2\relax%
-  \pdfpagewidth#1\relax}
+  \def\pgfsysdriver{pgfsys-dvipdfmx.def}
 \fi
 \RequirePackage{pgfpages}
 \pgfpagesuselayout{8 on 1}
