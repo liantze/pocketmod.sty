@@ -1,5 +1,5 @@
 %% Quick hack by LianTze Lim (liantze@gmail.com)
-\ProvidesPackage{pocketmod}[2017/05/07 package pocketmod.sty by LianTze Lim (liantze@gmail.com)]
+\ProvidesPackage{pocketmod}[2022/08/12 package pocketmod.sty by LianTze Lim (liantze@gmail.com)]
 
 \newif\if@showmarks\@showmarksfalse
 \DeclareOption{showmarks}{
@@ -7,6 +7,13 @@
 }
 \ProcessOptions
 
+\RequirePackage{ifxetex}
+\ifxetex
+\def\pgfsysdriver{pgfsys-dvipdfm.def}
+\def\pgfsys@papersize#1#2{%
+  \pdfpageheight#2\relax%
+  \pdfpagewidth#1\relax}
+\fi
 \RequirePackage{pgfpages}
 \pgfpagesuselayout{8 on 1}
 \newlength{\@adjlength}
